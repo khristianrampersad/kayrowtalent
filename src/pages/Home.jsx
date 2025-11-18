@@ -10,7 +10,7 @@ function Home() {
     '/assets/LAfreshman.jpg',
     '/assets/LAfreshman2.jpg',
     '/assets/Justyn2.jpg',
-    '/assets/justyn.jpg',
+    '/assets/Justyn.jpg',
   ]
 
   // Create pairs of images for side-by-side display
