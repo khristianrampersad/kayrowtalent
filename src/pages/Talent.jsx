@@ -8,7 +8,34 @@ function Talent() {
     if (metaDescription) {
       metaDescription.content = 'Talent we work with'
     }
+
+    // Handle anchor scrolling when page loads with hash
+    const scrollToHash = () => {
+      const hash = window.location.hash
+      if (hash) {
+        setTimeout(() => {
+          const element = document.querySelector(hash)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }, 100)
+      }
+    }
+
+    scrollToHash()
+
+    // Handle hash changes when already on the page
+    const handleHashChange = () => {
+      scrollToHash()
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
+
+  const getAnchorId = (name) => {
+    return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+  }
 
   const getSocialIcon = (platform) => {
     const icons = {
@@ -44,7 +71,7 @@ function Talent() {
 
           <div className="space-y-24">
             {talentData.map((person, index) => (
-              <div key={index} className="space-y-8">
+              <div key={index} id={getAnchorId(person.name)} className="space-y-8 scroll-mt-24">
                 <div className="text-center">
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                     {person.name}

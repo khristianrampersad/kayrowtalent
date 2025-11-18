@@ -17,12 +17,33 @@ function Header() {
 
   const isActive = (path) => location.pathname === path
 
+  // Split nav links for left and right sides of centered logo
+  const leftLinks = navLinks.slice(0, Math.floor(navLinks.length / 2))
+  const rightLinks = navLinks.slice(Math.floor(navLinks.length / 2))
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
+          {/* Left Navigation Links */}
+          <div className="hidden md:flex items-center space-x-6 flex-1">
+            {leftLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  isActive(link.path)
+                    ? 'text-white border-b-2 border-white'
+                    : 'text-text-muted hover:text-white'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Centered Logo */}
+          <Link to="/" className="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 z-10">
             <img 
               src={logo1} 
               alt="KayRow Talent" 
@@ -30,9 +51,9 @@ function Header() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
+          {/* Right Navigation Links */}
+          <div className="hidden md:flex items-center space-x-6 flex-1 justify-end">
+            {rightLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -49,7 +70,7 @@ function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-white z-20"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >

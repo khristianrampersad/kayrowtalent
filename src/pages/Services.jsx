@@ -9,6 +9,13 @@ function Services() {
     }
   }, [])
 
+  const brandPartnershipImages = [
+    '/assets/brandpartnership1.jpg',
+    '/assets/brandpartnership2.jpg',
+    '/assets/brandpartnership3.jpg',
+    '/assets/brandpartnership4.jpg',
+  ]
+
   const services = [
     {
       title: 'Digital Strategy',
@@ -19,6 +26,7 @@ function Services() {
       title: 'Brand Partnerships',
       description: 'We facilitate meaningful brand partnerships by connecting talent with brands that align with their values and audience. Our team handles negotiation, contract management, and partnership execution to ensure successful collaborations for both parties. We work with brands to identify the right talent for their campaigns and marketing initiatives.',
       for: ['Talent', 'Brands'],
+      images: brandPartnershipImages,
     },
   ]
 
@@ -61,9 +69,25 @@ function Services() {
                     ))}
                   </div>
                 </div>
-                <p className="text-lg text-text-muted leading-relaxed">
+                <p className="text-lg text-text-muted leading-relaxed mb-6">
                   {service.description}
                 </p>
+                {service.images && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                    {service.images.map((image, imgIndex) => (
+                      <div
+                        key={imgIndex}
+                        className="relative overflow-hidden aspect-[4/3] bg-primary group"
+                      >
+                        <img
+                          src={image}
+                          alt={`${service.title} - Image ${imgIndex + 1}`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
