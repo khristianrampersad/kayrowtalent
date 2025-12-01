@@ -69,14 +69,14 @@ function Talent() {
             Talent we work with
           </p>
 
-          <div className="space-y-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {talentData.map((person, index) => (
-              <div key={index} id={getAnchorId(person.name)} className="space-y-8 scroll-mt-24">
+              <div key={index} id={getAnchorId(person.name)} className="space-y-4 scroll-mt-24">
                 <div className="text-center">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
                     {person.name}
                   </h2>
-                  <div className="flex justify-center gap-4">
+                  <div className="flex justify-center gap-4 mb-4">
                     {Object.entries(person.socialLinks).map(([platform, url]) => (
                       <a
                         key={platform}
@@ -92,8 +92,8 @@ function Talent() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {person.images.map((image, imgIndex) => (
+                <div className="grid grid-cols-2 gap-4">
+                  {person.images.slice(0, 2).map((image, imgIndex) => (
                     <div
                       key={imgIndex}
                       className="relative overflow-hidden aspect-[4/5] bg-primary-light group"

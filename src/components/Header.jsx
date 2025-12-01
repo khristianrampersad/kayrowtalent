@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
-const logo1 = '/assets/KayRowLogo1.png'
+const logo1 = '/assets/KRlogo.png'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -24,7 +24,7 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between min-h-[10rem] py-4">
           {/* Left Navigation Links */}
           <div className="hidden md:flex items-center space-x-6 flex-1">
             {leftLinks.map((link) => (
@@ -43,11 +43,12 @@ function Header() {
           </div>
 
           {/* Centered Logo */}
-          <Link to="/" className="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 z-10">
+          <Link to="/" className="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 z-10" style={{ top: '0.5rem' }}>
             <img 
               src={logo1} 
               alt="KayRow Talent" 
-              className="h-8 md:h-10 w-auto"
+              className="w-auto"
+              style={{ height: '7rem' }}
             />
           </Link>
 
