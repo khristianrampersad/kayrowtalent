@@ -6,7 +6,7 @@ export const talentData = [
     name: 'Kyle Queiro',
     images: [
       '/assets/KyleQueiro.jpg',
-      '/assets/KyleQueiro4.jpg',
+      '/assets/KyleQueiro5.jpg',
     ],
     socialLinks: {
       instagram: 'https://instagram.com/kylequeiro', // Update with actual URL
