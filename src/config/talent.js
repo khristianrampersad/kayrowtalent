@@ -6,9 +6,7 @@ export const talentData = [
     name: 'Kyle Queiro',
     images: [
       '/assets/KyleQueiro.jpg',
-      '/assets/KyleQueiro3.jpg',
       '/assets/KyleQueiro4.jpg',
-      '/assets/KyleQueiro5.jpg',
     ],
     socialLinks: {
       instagram: 'https://instagram.com/kylequeiro', // Update with actual URL
@@ -16,11 +14,10 @@ export const talentData = [
     },
   },
   {
-    name: 'LAfreshman',
+    name: 'LAFreshman',
     images: [
       '/assets/LAfreshman.jpg',
       '/assets/LAfreshman2.jpg',
-      '/assets/LAfreshman3.jpg',
     ],
     socialLinks: {
       instagram: 'https://instagram.com/lafreshman', // Update with actual URL
@@ -28,13 +25,10 @@ export const talentData = [
     },
   },
   {
-    name: 'Justyn.',
+    name: 'Justyn Joseph',
     images: [
-      '/assets/Justyn.jpg',
       '/assets/Justyn2.jpg',
-      '/assets/Justyn3.jpg',
       '/assets/justyn4.jpg',
-      '/assets/justyn5.jpg',
     ],
     socialLinks: {
       instagram: 'https://instagram.com/justyn', // Update with actual URL
@@ -54,14 +48,8 @@ export const talentData = [
   {
     name: 'Montre Hartage',
     images: [
-      '/assets/MontreHartage.jpg',
       '/assets/MontreHartage2.jpg',
-      '/assets/MontreHartage3.jpg',
-      '/assets/MontreHartage4.jpg',
-      '/assets/MontreHartage5.jpg',
-      '/assets/MontreHartage6.jpg',
       '/assets/MontreHartage7.jpg',
-      '/assets/MontreHartage8.jpg',
     ],
     socialLinks: {
       instagram: 'https://instagram.com/montrehartage', // Update with actual URL
