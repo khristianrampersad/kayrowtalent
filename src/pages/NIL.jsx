@@ -25,7 +25,7 @@ function NIL() {
             <p className="text-lg text-text-muted mb-8 max-w-3xl mx-auto leading-relaxed">
               We partner with{' '}
               <a
-                href="https://educatingathletes.com"
+                href="https://www.educatingathletes.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:underline font-semibold"

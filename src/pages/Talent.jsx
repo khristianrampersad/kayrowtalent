@@ -109,6 +109,10 @@ function Talent() {
               </div>
             ))}
           </div>
+
+          <p className="text-center text-text-muted mt-16 text-lg">
+            Contact us to see full list of talent.
+          </p>
         </div>
       </section>
     </div>
